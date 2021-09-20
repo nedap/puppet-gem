@@ -98,7 +98,12 @@ Puppet::Type.type(:package).provide :gem, :parent => Puppet::Provider::Package d
         command << "--source" << "#{source}" << resource[:name]
       end
     else
-      command << "--no-rdoc" << "--no-ri" << resource[:name]
+      if ::Gem::VERSION =~ /^[012]\./
+        command << "--no-rdoc" << "--no-ri" << resource[:name]
+      else
+        # Rubygems 3.0.0 changed --no-ri to --no-document
+        command << "--no-document" << resource[:name]
+      end
     end
 
     command += install_options if resource[:install_options]
