@@ -15,7 +15,7 @@ platforms :ruby do
   gem 'pry', :group => :development
   gem 'yard', :group => :development
   gem 'redcarpet', '~> 2.0', :group => :development
-  gem "racc", "1.4.16", :group => :development
+  gem "racc", "1.8.1", :group => :development
 
   # To enable the augeas feature, use this gem.
   # Note that it is a native gem, so the augeas headers/libs
@@ -28,8 +28,8 @@ if !ENV['PUPPET_LOADED']
 end
 gem 'facter', '2.5.7.stpst.1', git: 'git@github.com:nedap/facter', :tag => "2.5.7.stpst.1"
 gem "hiera", '1.3.4.stpst.1', git: 'git@github.com:nedap/hiera', :tag => "1.3.4.stpst.1"
-gem "rake", "12.3.3", :require => false
-gem "syck", '1.4.0'
+gem "rake", "13.3.0", :require => false
+gem "syck", '1.4.1'
 gem "sync", '0.5.0'
 gem "scanf", '1.0.0'
 
